@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+$red: #e54d42;
+$orange: #f37b1d;
+$yellow: #fbbd08;
+$olive: #8dc63f;
+$green: #39b54a;
+$cyan: #1cbbb4;
+$blue: #0081ff;
+$purple: #6739b6;
+$mauve: #9c26b0;
+$pink: #e03997;
+$brown: #a5673f;
+$grey: #8799a3;
+$black: #333333;
+$darkGray: #666666;
+$gray: #aaaaaa;
+$ghostWhite: #f1f1f1;
+$white: #ffffff;
+/* 浅色 */
+$redLight: #fadbd9;
+$orangeLight: #fde6d2;
+$yellowLight: #fef2ce;
+$oliveLight: #e8f4d9;
+$greenLight: #d7f0db;
+$cyanLight: #d2f1f0;
+$blueLight: #cce6ff;
+$purpleLight: #e1d7f0;
+$mauveLight: #ebd4ef;
+$pinkLight: #f9d7ea;
+$brownLight: #ede1d9;
+$greyLight: #e7ebed;
+/* 渐变色 */
+$gradualRed: linear-gradient(45deg, #f43f3b, #ec008c);
+$gradualOrange: linear-gradient(45deg, #ff9700, #ed1c24);
+$gradualGreen: linear-gradient(45deg, #39b54a, #8dc63f);
+$gradualPurple: linear-gradient(45deg, #9000ff, #5e00ff);
+$gradualPink: linear-gradient(45deg, #ec008c, #6739b6);
+$gradualBlue: linear-gradient(45deg, #0081ff, #1cbbb4);
+/* 阴影透明色 */
+$ShadowSize: 6rpx 6rpx 8rpx;
+$redShadow: rgba(204, 69, 59, 0.2);
+$orangeShadow: rgba(217, 109, 26, 0.2);
+$yellowShadow: rgba(224, 170, 7, 0.2);
+$oliveShadow: rgba(124, 173, 55, 0.2);
+$greenShadow: rgba(48, 156, 63, 0.2);
+$cyanShadow: rgba(28, 187, 180, 0.2);
+$blueShadow: rgba(0, 102, 204, 0.2);
+$purpleShadow: rgba(88, 48, 156, 0.2);
+$mauveShadow: rgba(133, 33, 150, 0.2);
+$pinkShadow: rgba(199, 50, 134, 0.2);
+$brownShadow: rgba(140, 88, 53, 0.2);
+$greyShadow: rgba(114, 130, 138, 0.2);
+$grayShadow: rgba(114, 130, 138, 0.2);
+$blackShadow: rgba(26, 26, 26, 0.2);
+
+/*字体大小*/
+.text-min {
+    font-size: 8px;
+}
+.text-df {
+    font-size: 12px;
+}
+.text-mid {
+    font-size: 16px;
+}
+.text-lg {
+    font-size: 20px;
+}
+.text-max {
+    font-size: 24px;
+}
+/*字体颜色*/
+.text-white {
+    color: $white;
+}
+.text-grey {
+    color: $grey;
+}
+.text-gray {
+    color: $gray;
+}
+.text-green {
+    color: $green;
+}
+.text-black {
+    color: $black;
+}
+.text-blue {
+    color: $blue;
+}
+/*字体粗细*/
+.text-weight-min {
+    font-weight: 100;
+}
+.text-weight-mid {
+    font-weight: 400;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-light {
+    font-weight: lighter;
+}
+/*字体位置*/
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+/*背景*/
+.bg-white {
+    background-color: $white;
+}
+.bg-grey {
+    background-color: $grey;
+}
+/*透明*/
+.opacity-black {
+    background-color: $blackShadow;
+}
+/*flex*/
+.flex {
+    display: flex;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-column {
+    flex-direction: column;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+.align-start {
+    align-items: flex-start;
+}
+.align-end {
+    align-items: flex-end;
+}
+/*位置*/
+.margin-top {
+    margin-top: 16px;
+}
+.margin-bottom {
+    margin-bottom: 16px;
+}
+.margin-top-min {
+    margin-top: 8px;
+}
+.margin-top-max {
+    margin-top: 22px;
+}
+.margin-bottom-min {
+    margin-bottom: 8px;
+}
+.margin-bottom-max {
+    margin-bottom: 22px;
+}
+.padding {
+    padding: 16px;
+}
+.padding-vertical {
+    padding: 16px 0 16px 0;
+}
+.padding-horizontal {
+    padding: 0 16px 0 16px;
+}
+.padding-horizontal-max {
+    padding: 0 32px 0 32px;
+}
+/*圆角*/
+.round-df {
+    border-radius: 6px;
+}
+.round-mid {
+    border-radius: 8px;
+}
+.round-lg {
+    border-radius: 12px;
+}
+.round {
+    border-radius: 100%;
+}
