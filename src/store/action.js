@@ -1,20 +1,23 @@
-import types from './mutation-type';
+import types from './mutation-type'
 const actions = {
     updateCliName({commit}, payload) {
-        commit([types.SET_CLI_NAME], payload);
+        commit([types.SET_CLI_NAME], payload)
     },
     updatePermissions({commit}, payload) {
-        commit([types.SET_PERMISSIONS], payload);
+        commit([types.SET_PERMISSIONS], payload)
     },
     updateRoles({commit}, payload) {
-        commit([types.SET_ROLES], payload);
+        commit([types.SET_ROLES], payload)
     },
     updatePlayer({commit}, payload) {
-        commit([types.SET_PLAYER], payload);
+        commit([types.SET_PLAYER], payload)
     },
     updateToken({commit}, payload) {
-        commit([types.SET_TOKEN], payload);
+        commit([types.SET_TOKEN], payload)
+    },
+    updateLocale({commit}, payload) {
+        commit([types.SET_LOCALE], payload)
     }
 }
 
-export default actions;
+export default actions

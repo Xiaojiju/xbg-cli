@@ -1,19 +1,22 @@
 const getters = {
     getCliName: (state) => {
-        return state.CliName;
+        return state.CliName
     },
     getPermissions: (state) => {
-        return state.permissions;
+        return state.permissions
     },
     getRoles: (state) => {
-        return state.roles;
+        return state.roles
     },
     getToken: (state) => {
-        return state.token;
+        return state.token
     },
     getPlayer: (state) => {
-        return state.player;
+        return state.player
+    },
+    getLocale: (state) => {
+        return state.locale
     }
 }
 
-export default getters;
+export default getters

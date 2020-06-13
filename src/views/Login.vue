@@ -12,7 +12,7 @@
         </div>
         <div class="form-wrapper">
             <el-row class="__row">
-                <el-col :span="16" class="__row flex flex-row justify-center align-center">
+                <el-col :span="16" class="__row flex flex-row justify-center align-center __disabled">
                     <div class="text-wrapper">
                         <div class="__padding flex flex-column justify-start align-start">
                             <h1 class="font-title text-white margin-bottom">{{ $t('locale.common.topicTitle') }}</h1>
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </el-col>
-                <el-col :span="8" class="__row flex flex-row justify-center align-center">
+                <el-col :span="8" class="__row flex flex-row justify-center align-center __center">
                     <router-view />
                 </el-col>
             </el-row>
@@ -40,7 +40,7 @@ export default {
     },
     watch: {
         lang (change) {
-            this.$i18n.locale = change ? 'zh' : 'en';
+            this.$i18n.locale = change ? 'zh' : 'en'
         }
     }
 }
@@ -69,6 +69,14 @@ export default {
             min-height: 600px;
         }
     }
+    @media (max-width: 768px) {
+        .__disabled {
+            display: none;
+        }
+        .__center {
+            width: 100%;
+        }
+    }
     .text-wrapper {
         width: 100%;
         height: 100%;
@@ -76,7 +84,7 @@ export default {
             padding: 0 100px 0 100px;
             .font-title {
                 font-size: 48px;
-                @media (min-width: 768px) {
+                @media (max-width: 768px) {
                     font-size: 64px !important;
                 }
             }

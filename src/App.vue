@@ -9,9 +9,9 @@
     name: 'app',
     data() {
       return {
-      };
+      }
     },
-  };
+  }
 </script>
 <style lang="scss">
   @import "./static/common.scss";

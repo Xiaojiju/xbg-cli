@@ -3,16 +3,16 @@ const storage = {
         localStorage.setItem(key, JSON.stringify(value))
     },
     get: (key) => {
-        let value = localStorage.getItem(key);
-        return value ? JSON.parse(value) : undefined;
+        let value = localStorage.getItem(key)
+        return value ? JSON.parse(value) : undefined
     },
     remove: (key) => {
         if (key) {
-            localStorage.removeItem(key);
+            localStorage.removeItem(key)
         } else {
-            localStorage.clear();
+            localStorage.clear()
         }
     }
 }
 
-export default storage;
+export default storage

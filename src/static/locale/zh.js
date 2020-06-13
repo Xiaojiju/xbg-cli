@@ -22,7 +22,11 @@ export const locale = {
         doNotReset: '小可爱如果记起了密码',
         doNotResetClick: '可以登录',
         doNotAccount: '如果还有没有账号',
-        doNotAccountClick: '立即申请'
+        doNotAccountClick: '立即申请',
+        phoneNumberMiss: '请输入手机号码',
+        phoneNumberLength: '手机号码11位',
+        verifyMiss: '请输入验证码',
+        verifyLength: '验证码至少6位'
     },
     common: {
         account: '这么大个小可爱还没有账号？',

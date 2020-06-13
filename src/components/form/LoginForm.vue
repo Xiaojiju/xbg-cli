@@ -74,29 +74,29 @@ export default {
     methods: {
         submit (formName) {
             console.log(formName)
-            const vm = this;
+            const vm = this
             vm.$refs[formName].validate((valid) => {
                 if (valid) {
-                    vm.login(vm.models);
+                    vm.login(vm.models)
                 } else {
-                    return false;
+                    return false
                 }
             })
         },
         forgotPassword() {
-            this.$router.push('/account/reset');
+            this.$router.push('/account/reset')
         },
         login(params) {
             const vm = this;
             this.loading = true;
             login(params.username, params.password).then(res => {
                 if (res.body) {
-                    let body =  res.body;
+                    let body =  res.body
                     console.log(body)
-                    vm.putStates(body, body.permissions, body.roles);
-                    vm.$router.push("/");
+                    vm.putStates(body, body.permissions, body.roles)
+                    vm.$router.push("/")
                 } else {
-                    vm.loading = false;
+                    vm.loading = false
                 }
             })
         },
@@ -106,12 +106,12 @@ export default {
             setPermissions: types.SET_PERMISSIONS
         }),
         putStates(player, permissions, roles) {
-            this.setPlayer({player: player});
-            this.setRoles({roles: roles});
-            this.setPermissions({permissions: permissions});
+            this.setPlayer({player: player})
+            this.setRoles({roles: roles})
+            this.setPermissions({permissions: permissions})
         },
         applyAccount () {
-            this.$router.push('/account/apply');
+            this.$router.push('/account/apply')
         }
     }
 }

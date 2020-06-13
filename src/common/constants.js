@@ -5,7 +5,8 @@ const cacheTypes = {
     AUTH_TOKEN: 'authentication',
     EXPIRED_TIME: 'expired_time',
     PPERMISSIONS: 'permissions',
-    ROLES: 'roles'
+    ROLES: 'roles',
+    LOCALE: 'locale'
 }
 
-export default cacheTypes;
+export default cacheTypes

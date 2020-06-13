@@ -5,22 +5,22 @@ export const hasPermissions = {
     install: (Vue) => {
         Vue.directive('hasPermissions', {
             bind:(el, binding, vnode) => {
-                const permissions = vnode.context.$store.state.permissions;
-                let value = binding.value;
+                const permissions = vnode.context.$store.state.permissions
+                let value = binding.value
                 if (!Array.isArray(value)) {
                     throw new Error(`the value should be an Array binding directive hasPermissions,not a ${ typeof value }`)
                 }
-                let flag = true;
+                let flag = true
                 for (const v of value) {
                     if (!permissions.includes(v)) {
-                        flag = false;
+                        flag = false
                     }
                 }
                 if (!flag) {
                     if (!el.parentNode) {
-                        el.style.display = 'none';
+                        el.style.display = 'none'
                     } else {
-                        el.parentNode.removeChild(el);
+                        el.parentNode.removeChild(el)
                     }
                 }
             }
@@ -34,22 +34,22 @@ export const hasNoPermissions = {
     install: (Vue) => {
         Vue.directive('hasNoPermissions', {
             bind: (el, binding, vnode) => {
-                const permissions = vnode.context.$store.state.permissions;
-                let value = binding.value;
+                const permissions = vnode.context.$store.state.permissions
+                let value = binding.value
                 if (!Array.isArray(value)) {
                     throw new Error(`the value should be an Array binding directive hasNoPermissions,not a ${ typeof value }`)
                 }
-                let flag = true;
+                let flag = true
                 for (const v of value) {
                     if (permissions.includes(v)) {
-                        flag = false;
+                        flag = false
                     }
                 }
                 if (!flag) {
                     if (!el.parentNode) {
-                        el.style.display = 'none';
+                        el.style.display = 'none'
                     } else {
-                        el.parentNode.removeChild(el);
+                        el.parentNode.removeChild(el)
                     }
                 }
             }
@@ -63,22 +63,22 @@ export const hasAnyPermissions = {
     install: (Vue) => {
         Vue.directive('hasAnyPermissions', {
             bind: (el, binding, vnode) => {
-                const permissions = vnode.context.$store.state.permissions;
-                let value = binding.value;
+                const permissions = vnode.context.$store.state.permissions
+                let value = binding.value
                 if (!Array.isArray(value)) {
                     throw new Error(`the value should be an Array binding directive hasAnyPermissions,not a ${ typeof value }`)
                 }
-                let flag = false;
+                let flag = false
                 for (const v of value) {
                     if (permissions.includes(v)) {
-                        flag = true;
+                        flag = true
                     }
                 }
                 if (!flag) {
                     if (!el.parentNode) {
-                        el.style.display = 'none';
+                        el.style.display = 'none'
                     } else {
-                        el.parentNode.removeChild(el);
+                        el.parentNode.removeChild(el)
                     }
                 }
             }
@@ -92,22 +92,22 @@ export const hasRoles = {
     install: (Vue) => {
         Vue.directive('hasRoles', {
             bind: (el, binding, vnode) => {
-                const roles = vnode.context.$store.state.roles;
-                let value = binding.value;
+                const roles = vnode.context.$store.state.roles
+                let value = binding.value
                 if (!Array.isArray(value)) {
                     throw new Error(`the value should be an Array binding directive hasRoles,not a ${ typeof value }`)
                 }
-                let flag = true;
+                let flag = true
                 for (const r of roles) {
                     if (!roles.includes(r)) {
-                        flag = false;
+                        flag = false
                     }
                 }
                 if (!flag) {
                     if (!el.parentNode) {
-                        el.style.display = 'none';
+                        el.style.display = 'none'
                     } else {
-                        el.parentNode.removeChild(el);
+                        el.parentNode.removeChild(el)
                     }
                 }
             }
@@ -121,22 +121,22 @@ export const hasNoRoles = {
     install: (Vue) => {
         Vue.directive('hasNoRoles', {
             bind: (el, binding, vnode) => {
-                const roles = vnode.context.$store.state.roles;
-                let value = binding.value;
+                const roles = vnode.context.$store.state.roles
+                let value = binding.value
                 if (!Array.isArray(value)) {
                     throw new Error(`the value should be an Array binding directive hasNoRoles,not a ${ typeof value }`)
                 }
-                let flag = true;
+                let flag = true
                 for (const r of roles) {
                     if (roles.includes(r)) {
-                        flag = false;
+                        flag = false
                     }
                 }
                 if (!flag) {
                     if (!el.parentNode) {
-                        el.style.display = 'none';
+                        el.style.display = 'none'
                     } else {
-                        el.parentNode.removeChild(el);
+                        el.parentNode.removeChild(el)
                     }
                 }
             }
@@ -150,22 +150,22 @@ export const hasAnyRoles = {
     install: (Vue) => {
         Vue.directive('hasAnyRoles', {
             bind: (el, binding, vnode) => {
-                const roles = vnode.context.$store.state.roles;
-                let value = binding.value;
+                const roles = vnode.context.$store.state.roles
+                let value = binding.value
                 if (!Array.isArray(value)) {
                     throw new Error(`the value should be an Array binding directive hasAnyRoles,not a ${ typeof value }`)
                 }
-                let flag = false;
+                let flag = false
                 for (const r of roles) {
                     if (roles.includes(r)) {
-                        flag = true;
+                        flag = true
                     }
                 }
                 if (!flag) {
                     if (!el.parentNode) {
-                        el.style.display = 'none';
+                        el.style.display = 'none'
                     } else {
-                        el.parentNode.removeChild(el);
+                        el.parentNode.removeChild(el)
                     }
                 }
             }

@@ -23,7 +23,11 @@ export const locale = {
         doNotReset: 'If you remember your password',
         doNotResetClick: 'login now',
         doNotAccount: 'If you dont have an account',
-        doNotAccountClick: 'apply now'
+        doNotAccountClick: 'apply now',
+        phoneNumberMiss: 'miss mobile phone numbers',
+        phoneNumberLength: 'At least 11 mobile phone numbers',
+        verifyMiss: 'enter code please',
+        verifyLength: 'At least 6 code'
     },
     common: {
         account: 'New to XBG-Cli?',

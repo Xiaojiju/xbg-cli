@@ -9,12 +9,12 @@
             </div>
             <el-form class="text-black text-bold text-mid __form padding-vertical" :model="models" :rules="rules" ref="ruleForm">
                 <el-form-item prop="phoneNumber">
-                    <el-input type="text" maxlength="25" minlength="8" v-model="models.phoneNumber" :placeholder="$t('locale.form.phone')">
+                    <el-input type="text" maxlength="11" minlength="11" v-model="models.phoneNumber" :placeholder="$t('locale.form.phone')">
                         <el-button style="min-width: 80px;" :disabled="disabled" slot="append" :icon="icon" @click="sendMessage"></el-button>
                     </el-input>
                 </el-form-item>
                 <el-form-item prop="verify" class="margin-top-max">
-                    <el-input type="text" maxlength="25" minlength="8" v-model="models.phoneNumber" :placeholder="$t('locale.form.verify')"></el-input>
+                    <el-input type="text" minlength="6" maxlength="6" v-model="models.verify" :placeholder="$t('locale.form.verify')"></el-input>
                 </el-form-item>
                 <el-form-item class="margin-top-max">
                     <el-button :loading="loading" type="primary" @click="submit('ruleForm')">{{ $t('locale.form.resetButton') }}</el-button>
@@ -42,7 +42,24 @@ export default {
             btnType: 'primary',
             disabled: false,
             loading: false,
-            rules: {}
+            rules: {
+                phoneNumber: [
+                    {
+                        required: true, message: this.$t('locale.form.phoneNumberMiss'), trigger: 'blur'
+                    },
+                    {
+                        min: 11, max: 11, message: this.$t('locale.form.phoneNumbeLength'), trigger: 'blur'
+                    }
+                ],
+                verify: [
+                    {
+                        required: true, message: this.$t('locale.form.verifyMiss'), trigger: 'blur'
+                    },
+                    {
+                        min: 6, max: 6, message: this.$t('locale.form.verifyLength'), trigger: 'blur'
+                    }
+                ]
+            }
         }
     },
     methods: {
@@ -50,13 +67,21 @@ export default {
             this.$router.push('/account/login');
         },
         submit(formName) {
-            console.log(formName);
+            console.log(formName)
+            const vm = this
+            vm.$refs[formName].validate((valid) => {
+                if (valid) {
+                    console.log(valid)
+                } else {
+                    return false
+                }
+            })
         },
         sendMessage() {
 
         },
         apply() {
-            this.$router.push('/account/apply');
+            this.$router.push('/account/apply')
         }
     }
 }
