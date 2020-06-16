@@ -137,6 +137,12 @@ $blackShadow: rgba(26, 26, 26, 0.2);
 .flex-column {
     flex-direction: column;
 }
+.justify-around {
+    justify-content: space-around;
+}
+.justify-between {
+    justify-content: space-between;
+}
 .justify-center {
     justify-content: center;
 }

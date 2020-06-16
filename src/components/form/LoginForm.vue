@@ -94,7 +94,7 @@ export default {
                     let body =  res.body
                     console.log(body)
                     vm.putStates(body, body.permissions, body.roles)
-                    vm.$router.push("/")
+                    vm.$router.push("/index")
                 } else {
                     vm.loading = false
                 }
@@ -127,19 +127,19 @@ export default {
         height: auto;
     }
     .__form {
+        width: 100%;
+        dt {
+        margin-bottom: 8px;
+        }
+        dd {
+            margin-bottom: 20px;
+        }
+        .el-form-item {
+            margin-bottom: 0 !important;
+        }
+        .el-button {
             width: 100%;
-            dt {
-            margin-bottom: 8px;
-            }
-            dd {
-                margin-bottom: 20px;
-            }
-            .el-form-item {
-                margin-bottom: 0 !important;
-            }
-            .el-button {
-                width: 100%;
-            }
+        }
         }
     .__under-click {
         cursor: pointer;
