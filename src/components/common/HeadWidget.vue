@@ -1,45 +1,35 @@
 <template>
     <div class="__header-section">
         <div class="padding-horizontal">
-            <!-- <div class="flex flex-row justify-around align-center">
-                <div class="__logo">
-                    <img src="../../assets/logo.png"/>
-                </div>
-                <div></div>
-            </div> -->
             <el-row type="flex" class="row-bg" justify="space-between" align="center">
                 <el-col :span="6">
                     <div class="__logo flex flex-row align-center">
-                        <img src="../../assets/logo.png"/>
-                        <span class="text-lg text-bold text-black">小饼干</span>
+                        <img :src="logo"/>
                     </div>
                 </el-col>
                 <el-col :span="6">
                     <ul class="__mine flex flex-row justify-end">
-                        <li class="__sub-menu-box flex justify-center align-center padding-horizontal-max">
+                        <li class="__sub-menu-box flex justify-center align-center padding-horizontal">
                             <div class="__menu-item">
-                                <el-badge value="99" max="99">
-                                    <i class="el-icon-s-flag"/>通知
+                                <el-badge :value="notify.value" :max="notify.max">
+                                    <el-button icon="el-icon-s-flag" circle size="small"></el-button>
                                 </el-badge>
                             </div>
                         </li>
-                        <li class="__sub-menu-box flex justify-center align-center padding-horizontal-max">
+                        <li class="__sub-menu-box flex justify-center align-center padding-horizontal">
                             <div class="__menu-item">
-                                <el-badge value="200" max="99">
-                                    <i class="el-icon-s-comment"/>消息
+                                <el-badge :value="message.value" :max="message.max">
+                                    <el-button icon="el-icon-s-comment" circle size="small"></el-button>
                                 </el-badge>
                             </div>
                         </li>
-                        <li class="__sub-menu-box flex justify-center align-center padding-horizontal-max">
-                            <el-dropdown>
+                        <li class="__sub-menu-box flex justify-center align-center padding-horizontal">
+                            <el-dropdown @command="handleCommand">
                                 <div class="flex flex-row">
-                                    <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-                                    <i class="el-icon-caret-bottom"></i>
+                                    <el-avatar style="width: 32px; height: 32px;" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
                                 </div>
                                 <el-dropdown-menu slot="dropdown">
-                                    <el-dropdown-item>基本信息</el-dropdown-item>
-                                    <el-dropdown-item>修改密码</el-dropdown-item>
-                                    <el-dropdown-item>退出</el-dropdown-item>
+                                    <el-dropdown-item v-for="item in dropItems" v-bind:key="item.index" :command="item.command">{{ item.value }}</el-dropdown-item>
                                 </el-dropdown-menu>
                             </el-dropdown>
                         </li>
@@ -53,12 +43,31 @@
 export default {
     name: 'HeadWidget',
     data () {
-        return {}
+        return {
+            notify: {
+                value: 129,
+                max: 99
+            },
+            message: {
+                value: 111,
+                max: 99
+            }
+        }
     },
     props: {
-        title: {
+        logo: {
             type: String,
             value: ''
+        },
+        dropItems: {
+            type: Array,
+            value: []
+        }
+    },
+    methods: {
+        handleCommand (command) {
+            console.log(command)
+            this.$emit(command)
         }
     }
 }
@@ -67,7 +76,7 @@ export default {
     .__header-section {
         width: 100%;
         height: 60px;
-        background-color: dimgray;
+        background-color: #24292e;
         outline: none;
     }
     .__logo {

@@ -8,8 +8,13 @@ import LoginForm from '../components/form/LoginForm'
 import Reset from '../components/form/Reset'
 import ResetPwd from '../components/form/ResetPwd'
 import Apply from '../components/form/Apply'
-import Admin from '../views/frames/Admin'
-import Settings from '../views/frames/Settings'
+import Admin from '../views/monitor/Index'
+import Settings from '../views/setting/Index'
+import Profile from '../views/setting/Profile'
+import Account from '../views/setting/Account'
+import Security from '../views/setting/Security'
+import Phone from '../views/setting/Phone'
+import Email from '../views/setting/Email'
 
 Vue.use(Router)
 
@@ -25,7 +30,29 @@ const routerView = [
             },
             {
                 path: 'settings',
-                component: Settings
+                component: Settings,
+                children: [
+                    {
+                        path: 'profile',
+                        component: Profile
+                    },
+                    {
+                        path: 'account',
+                        component: Account
+                    },
+                    {
+                        path: 'security',
+                        component: Security
+                    },
+                    {
+                        path: 'phone',
+                        component: Phone
+                    },
+                    {
+                        path: 'email',
+                        component: Email
+                    }
+                ]
             }
         ]
     },
@@ -55,9 +82,9 @@ const routerView = [
 ]
 
 let router = new Router({
+    mode: 'history',
     routes: routerView
 })
-
 const whitePath = ['/account/login', '/account/reset', '/account/reset-pwd', '/account/apply']
 
 let asynRouters = {}

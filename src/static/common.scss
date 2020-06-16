@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
 $red: #e54d42;
@@ -188,6 +189,9 @@ $blackShadow: rgba(26, 26, 26, 0.2);
 }
 .padding {
     padding: 16px;
+}
+.padding-bottom-mid {
+    padding-bottom: 12px;
 }
 .padding-right-min {
     padding-right: 8px;

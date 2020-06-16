@@ -1,24 +1,9 @@
 <template>
   <el-container>
-<<<<<<< HEAD
     <el-header class="__header">
-        <head-widget title="小饼干"/>
-    </el-header>
-=======
-    <el-header>
-      <el-row>
-        <el-col :span="12">
-          <div class="logo">
-            <span class="site-name">{{ msg }}</span>
-          </div>
-        </el-col>
-        <el-col :span="12">
-          
-        </el-col>
-      </el-row>
+        <head-widget src="https://avatars3.githubusercontent.com/u/34998646?s=400&u=dc87fc4954c4e546513c9ed194ca3c93fdc24607&v=4" :drop-items="dropItems" @pushSetting="handleSetting"/>
     </el-header>
     <router-view/>
->>>>>>> 3e01d222d88ec801f60b74cfde0f830def9b72c7
   </el-container>
 </template>
 <script>
@@ -28,7 +13,19 @@ export default {
   data () {
     return {
       msg: '小饼干的平底锅',
-      isCollapse: false
+      isCollapse: false,
+      dropItems: [
+        {
+          index: 0,
+          value: '设置',
+          command: 'pushSetting'
+        },
+        {
+          index: 1,
+          value: '退出登录',
+          command: 'loginOut'
+        }
+      ]
     }
   },
   components: {HeadWidget},
@@ -38,6 +35,9 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath)
+    },
+    handleSetting() {
+      this.$router.go('settings/profile')
     }
   }
 }

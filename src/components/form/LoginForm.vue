@@ -94,11 +94,7 @@ export default {
                     let body =  res.body
                     console.log(body)
                     vm.putStates(body, body.permissions, body.roles)
-<<<<<<< HEAD
-                    vm.$router.push("/index")
-=======
                     vm.$router.push("/index/admin")
->>>>>>> 3e01d222d88ec801f60b74cfde0f830def9b72c7
                 } else {
                     vm.loading = false
                 }
