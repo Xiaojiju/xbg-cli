@@ -10,10 +10,11 @@ import storage from '../utils/storage'
 
 Vue.use(VueAxios, axios)
 
-const dev = 'http://localhost:8195'
+// const dev = 'http://localhost:8195'
+const comDev = 'http://192.168.1.6:8195'
 
 const request = axios.create({
-    baseURL: dev,
+    baseURL: comDev,
     responseType: 'json',
     validateStatus (status) {
         return status == 200

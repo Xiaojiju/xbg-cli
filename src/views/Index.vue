@@ -1,8 +1,24 @@
 <template>
   <el-container>
+<<<<<<< HEAD
     <el-header class="__header">
         <head-widget title="小饼干"/>
     </el-header>
+=======
+    <el-header>
+      <el-row>
+        <el-col :span="12">
+          <div class="logo">
+            <span class="site-name">{{ msg }}</span>
+          </div>
+        </el-col>
+        <el-col :span="12">
+          
+        </el-col>
+      </el-row>
+    </el-header>
+    <router-view/>
+>>>>>>> 3e01d222d88ec801f60b74cfde0f830def9b72c7
   </el-container>
 </template>
 <script>
