@@ -8,6 +8,8 @@ import LoginForm from '../components/form/LoginForm'
 import Reset from '../components/form/Reset'
 import ResetPwd from '../components/form/ResetPwd'
 import Apply from '../components/form/Apply'
+import Admin from '../views/frames/Admin'
+import Settings from '../views/frames/Settings'
 
 Vue.use(Router)
 
@@ -15,7 +17,17 @@ const routerView = [
     {
         path: '/index',
         name: 'index',
-        component: Index
+        component: Index,
+        children: [
+            {
+                path: 'admin',
+                component: Admin 
+            },
+            {
+                path: 'settings',
+                component: Settings
+            }
+        ]
     },
     {
         path: '/account',

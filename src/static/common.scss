@@ -10,7 +10,7 @@ $yellow: #fbbd08;
 $olive: #8dc63f;
 $green: #39b54a;
 $cyan: #1cbbb4;
-$blue: #0081ff;
+$blue: #0366d6;
 $purple: #6739b6;
 $mauve: #9c26b0;
 $pink: #e03997;
@@ -66,7 +66,7 @@ $blackShadow: rgba(26, 26, 26, 0.2);
     font-size: 12px;
 }
 .text-mid {
-    font-size: 16px;
+    font-size: 14px;
 }
 .text-lg {
     font-size: 20px;
@@ -174,8 +174,32 @@ $blackShadow: rgba(26, 26, 26, 0.2);
 .margin-bottom-max {
     margin-bottom: 22px;
 }
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
 .padding {
     padding: 16px;
+}
+.padding-right-min {
+    padding-right: 8px;
+}
+.padding-right-mid {
+    padding-right: 12px;
+}
+.padding-right-max {
+    padding-right: 16px;
+}
+.padding-left-min {
+    padding-left: 8px;
+}
+.padding-left-mid {
+    padding-left: 12px;
+}
+.padding-left-max {
+    padding-left: 16px;
 }
 .padding-vertical {
     padding: 16px 0 16px 0;
@@ -198,4 +222,9 @@ $blackShadow: rgba(26, 26, 26, 0.2);
 }
 .round {
     border-radius: 100%;
+}
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
