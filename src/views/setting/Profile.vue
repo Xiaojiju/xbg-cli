@@ -161,35 +161,4 @@
         left: 10px;
         background-color: #24292e;
     }
-    .__form-group {
-        margin-bottom: 15px !important;
-        font-size: 14px;
-    }
-    .__form-control {
-            width: 440px;
-            max-width: 100%;
-            margin-right: 5px;
-            background-color: #fafbfc;
-        }
-        .__form-select {
-                min-height: 34px;
-                padding: 6px 8px;
-                font-size: 14px;
-                line-height: 20px;
-                color: #24292e;
-                vertical-align: middle;
-                background-color: #fff;
-                background-repeat: no-repeat;
-                background-position: right 8px center;
-                border: 1px solid #d1d5da;
-                border-radius: 3px;
-                outline: none;
-                box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
-            }
-        .__note {
-            min-height: 17px;
-            margin: 4px 0 2px;
-            font-size: 12px;
-            color: #586069;
-        }
 </style>

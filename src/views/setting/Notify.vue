@@ -1,13 +1,13 @@
 <template>
-    <div class="__phone-box">
+    <div class="__email-box">
         <div class="__sub-head">
-            <h2 class="__sub-heading">验证手机</h2>
+            <h2 class="__sub-heading">通知</h2>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'Phone',
+    name: 'Notify',
     data() {
         return {}
     }

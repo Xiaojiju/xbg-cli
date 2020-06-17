@@ -13,8 +13,8 @@ import Settings from '../views/setting/Index'
 import Profile from '../views/setting/Profile'
 import Account from '../views/setting/Account'
 import Security from '../views/setting/Security'
-import Phone from '../views/setting/Phone'
-import Email from '../views/setting/Email'
+import Notify from '../views/setting/Notify'
+import Message from '../views/setting/Message'
 
 Vue.use(Router)
 
@@ -34,23 +34,28 @@ const routerView = [
                 children: [
                     {
                         path: 'profile',
+                        name: 'profile',
                         component: Profile
                     },
                     {
                         path: 'account',
+                        name: 'account',
                         component: Account
                     },
                     {
                         path: 'security',
+                        name: 'security',
                         component: Security
                     },
                     {
-                        path: 'phone',
-                        component: Phone
+                        path: 'notify',
+                        name: 'notify',
+                        component: Notify
                     },
                     {
-                        path: 'email',
-                        component: Email
+                        path: 'message',
+                        name: 'message',
+                        component: Message
                     }
                 ]
             }
@@ -82,7 +87,6 @@ const routerView = [
 ]
 
 let router = new Router({
-    mode: 'history',
     routes: routerView
 })
 const whitePath = ['/account/login', '/account/reset', '/account/reset-pwd', '/account/apply']

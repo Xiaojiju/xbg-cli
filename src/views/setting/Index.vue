@@ -16,18 +16,18 @@
                                 <div class="__under-text text-df text-light">个人设置</div>
                             </div>
                         </div>
-                        <a class="text-mid text-blue __menu-item __menu-item-selected" aria-selected="true">基本信息</a>
-                        <a class="text-mid text-blue __menu-item __menu-item-selected">账号</a>
-                        <a class="text-mid text-blue __menu-item __menu-item-selected">隐私安全</a>
-                        <a class="text-mid text-blue __menu-item __menu-item-selected">手机号码</a>
-                        <a class="text-mid text-blue __menu-item __menu-item-selected">邮箱</a>
-                        <a class="text-mid text-blue __menu-item __menu-item-selected">通知</a>
-                        <a class="text-mid text-blue __menu-item __menu-item-selected">消息</a>
+                        <a 
+                            class="text-mid text-blue __menu-item __menu-item-selected"
+                            v-for="item in tabs"
+                            :key="item.index"
+                            @click="next(item.name)"
+                            :aria-selected="item.selected"
+                        >{{ item.value }}</a>
                     </nav>
                     <nav class="__nav">
-                        <a class="text-mid text-blue __menu-item">关于</a>
-                        <a class="text-mid text-blue __menu-item">仓库</a>
-                        <a class="text-mid text-blue __menu-item">退出登录</a>
+                        <a class="text-mid text-blue __menu-item" @click="about">关于</a>
+                        <a class="text-mid text-blue __menu-item" @click="repository">仓库</a>
+                        <a class="text-mid text-blue __menu-item" @click="signout">退出登录</a>
                     </nav>
                 </el-col>
                 <el-col :span="18">
@@ -44,10 +44,56 @@ export default {
         return {
             url: 'https://avatars2.githubusercontent.com/u/34998646?s=60&v=4',
             fit: 'fill',
+            tabs: [
+                { index: 0, name: 'profile', value: '个人简介', selected: false },
+                { index: 1, name: 'account', value: '账号', selected: false },
+                { index: 2, name: 'security', value: '隐私安全', selected: false },
+                { index: 3, name: 'notify', value: '通知', selected: false },
+                { index: 4, name: 'message', value: '消息', selected: false }
+            ]
         }
     },
+    mounted() {
+        this.selected()
+    },
     methods: {
-        
+        /**
+         * 选中当前栏
+         */
+        selected() {
+            let pathName = this.$route.name
+            this.tabs.map( item => {
+                item.selected = item.name === pathName
+            })
+        },
+        next(name) {
+            console.log(name)
+            this.$router.push(name)
+            // 由于mounted函数只能执行一次，所以在路由发生变化后再次调用
+            // 后续进行优化
+            this.selected()
+        },
+        about() {
+            this.$notify({
+                title: '警告',
+                message: '暂时还没有开发此页面',
+                type: 'warning'
+            });
+        },
+        repository() {
+            this.$notify({
+                title: '警告',
+                message: '暂时还没有开发此页面',
+                type: 'warning'
+            });
+        },
+        signout() {
+            this.$notify({
+                title: '警告',
+                message: '暂时还没有开发此页面',
+                type: 'warning'
+            });
+        }
     }
 }
 </script>
@@ -81,6 +127,10 @@ export default {
         display: block;
         padding: 8px 10px;
         border-bottom: 1px solid #e1e4e8;
+    }
+    .__menu-item[aria-selected=true] {
+        cursor: default;
+        background-color: cyan;
     }
     .__menu-item:hover {
         background-color: cyan;
