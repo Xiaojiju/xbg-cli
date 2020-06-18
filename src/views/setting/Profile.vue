@@ -65,7 +65,9 @@
                             <div class="__note">“★☆伱吥紾惜莪菂AI，请滚诎涐菂丗堺◇◆。oK？∝╬══” 来自一个杀马特贵族。</div>
                         </dd>
                     </dl>
-                    <el-button type="primary" :loading="loading" @click="submit('ruleForm')" class="margin-top-max">修改</el-button>
+                    <el-form-item class="flex justify-end">
+                        <el-button type="primary" size="small" :loading="loading" @click="submit('ruleForm')" class="margin-top-max">修改</el-button>
+                    </el-form-item>
                 </el-form>
             </el-col>
             <el-col :span="8" class="__gutter __box-inline">

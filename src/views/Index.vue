@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-header class="__header">
-        <head-widget src="https://avatars3.githubusercontent.com/u/34998646?s=400&u=dc87fc4954c4e546513c9ed194ca3c93fdc24607&v=4" :drop-items="dropItems" @pushSetting="handleSetting"/>
+        <head-widget :drop-items="dropItems" @pushSetting="handleSetting"/>
     </el-header>
     <router-view/>
   </el-container>
@@ -25,7 +25,8 @@ export default {
           value: '退出登录',
           command: 'loginOut'
         }
-      ]
+      ],
+      headLogo: '../../assets/logo-cat.png'
     }
   },
   components: {HeadWidget},

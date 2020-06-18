@@ -4,7 +4,7 @@
             <el-row type="flex" class="row-bg" justify="space-between" align="center">
                 <el-col :span="6">
                     <div class="__logo flex flex-row align-center">
-                        <img :src="logo"/>
+                        <img src="../../assets/logo-cat.png"/>
                     </div>
                 </el-col>
                 <el-col :span="6">

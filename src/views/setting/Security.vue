@@ -22,7 +22,7 @@
                     </dl>
                     <dl class="__form-group">
                         <dt>
-                            <label for="checkOldPwd" class="text-bold">老密码</label>
+                            <label for="checkOldPwd" class="text-bold">再次输入老密码</label>
                         </dt>
                         <dd class="margin-top-min">
                             <el-form-item prop="checkOldPwd">
@@ -32,7 +32,7 @@
                     </dl>
                     <dl class="__form-group">
                         <dt>
-                            <label for="newPwd" class="text-bold">老密码</label>
+                            <label for="newPwd" class="text-bold">新密码</label>
                         </dt>
                         <dd class="margin-top-min">
                             <el-form-item prop="newPwd">
@@ -40,8 +40,10 @@
                             </el-form-item>
                         </dd>
                     </dl>
-                    <el-button type="primary" :loading="loading" @click="submit('pwd')">修改</el-button>
-                    <el-button @click="reset('pwd')">重置</el-button>
+                    <el-form-item class="flex justify-end">
+                        <el-button size="small" type="primary" :loading="loading" @click="submit('pwd')">修改</el-button>
+                        <el-button size="small" @click="reset('pwd')">重置</el-button>
+                    </el-form-item>
                 </el-form>
             </el-col>
         </el-row>
