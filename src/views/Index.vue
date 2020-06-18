@@ -38,7 +38,7 @@ export default {
       console.log(key, keyPath)
     },
     handleSetting() {
-      this.$router.go('settings/profile')
+      this.$router.push('settings/profile')
     }
   }
 }

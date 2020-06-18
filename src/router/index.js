@@ -15,6 +15,7 @@ import Account from '../views/setting/Account'
 import Security from '../views/setting/Security'
 import Notify from '../views/setting/Notify'
 import Message from '../views/setting/Message'
+import Record from '../views/monitor/Record'
 
 Vue.use(Router)
 
@@ -26,7 +27,14 @@ const routerView = [
         children: [
             {
                 path: 'admin',
-                component: Admin 
+                component: Admin,
+                children: [
+                    {
+                        path: 'record',
+                        component: Record,
+                        name: 'record'
+                    }
+                ]
             },
             {
                 path: 'settings',
@@ -89,7 +97,8 @@ const routerView = [
 let router = new Router({
     routes: routerView
 })
-const whitePath = ['/account/login', '/account/reset', '/account/reset-pwd', '/account/apply']
+// '/account/login', '/account/reset', '/account/reset-pwd', '/account/apply'
+const whitePath = []
 
 let asynRouters = {}
 
