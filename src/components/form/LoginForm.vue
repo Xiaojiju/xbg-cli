@@ -34,7 +34,7 @@
     </div>
 </template>
 <script>
-import { login } from '../../request/api';
+// import { login } from '../../request/api';
 import { mapMutations } from 'vuex';
 import types from '../../store/mutation-type';
 export default {
@@ -84,21 +84,26 @@ export default {
             })
         },
         forgotPassword() {
-            this.$router.push('/account/reset')
+            this.$router.push({ name: 'reset-pwd'})
         },
         login(params) {
             const vm = this;
             this.loading = true;
-            login(params.username, params.password).then(res => {
-                if (res.body) {
-                    let body =  res.body
-                    console.log(body)
-                    vm.putStates(body, body.permissions, body.roles)
-                    vm.$router.push("/index/admin")
-                } else {
-                    vm.loading = false
-                }
-            })
+            // login(params.username, params.password).then(res => {
+            //     if (res.body) {
+            //         let body =  res.body
+            //         console.log(body)
+            //         vm.putStates(body, body.permissions, body.roles)
+            //         vm.$router.push({ name: 'admin'})
+            //     } else {
+            //         vm.loading = false
+            //     }
+            // })
+            if (params.username === 'admin' && params.password === 'adminadmin') {
+                vm.$router.push({ name: 'admin'})
+            } else {
+                vm.loading = false
+            }
         },
         ...mapMutations({
             setPlayer: types.SET_PLAYER,

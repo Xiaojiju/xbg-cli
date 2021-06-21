@@ -66,7 +66,6 @@ export default {
     },
     methods: {
         handleCommand (command) {
-            console.log(command)
             this.$emit(command)
         }
     }

@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../views/Index'
 import Login from '../views/Login'
-import storage from '../utils/storage'
-import cacheTypes from '../common/constants'
+// import storage from '../utils/storage'
+// import cacheTypes from '../common/constants'
 import LoginForm from '../components/form/LoginForm'
 import Reset from '../components/form/Reset'
 import ResetPwd from '../components/form/ResetPwd'
@@ -21,12 +21,14 @@ Vue.use(Router)
 
 const routerView = [
     {
-        path: '/index',
+        path: '/',
         name: 'index',
         component: Index,
+        redirect: 'account',
         children: [
             {
                 path: 'admin',
+                name: 'admin',
                 component: Admin,
                 children: [
                     {
@@ -39,6 +41,8 @@ const routerView = [
             {
                 path: 'settings',
                 component: Settings,
+                name: 'settings',
+                redirect: 'settings/profile',
                 children: [
                     {
                         path: 'profile',
@@ -73,21 +77,26 @@ const routerView = [
         path: '/account',
         name: 'Login',
         component: Login,
+        redirect: 'account/login',
         children: [
             {
                 path: 'login',
+                name: 'login',
                 component: LoginForm
             },
             {
                 path: 'reset',
+                name: 'reset',
                 component: Reset
             },
             {
                 path: 'reset-pwd',
+                name: 'reset-pwd',
                 component: ResetPwd
             },
             {
                 path: 'apply',
+                name: 'apply',
                 component: Apply
             }
         ]
@@ -98,33 +107,33 @@ let router = new Router({
     routes: routerView
 })
 // '/account/login', '/account/reset', '/account/reset-pwd', '/account/apply'
-const whitePath = []
+// const whitePath = []
 
-let asynRouters = {}
+// let asynRouters = {}
 
 /**
  * 检查本地是否需要登录
  */
-router.beforeEach((to, from, next) => {
-    const token = storage.get(cacheTypes.AUTH_TOKEN)
-    if (!token) {
-        if (whitePath.indexOf(to.path) !== -1) {
-            next()
-        } else {
-            next('/account/login')
-        }
-    }
-    const dyncRouters = storage.get(cacheTypes.DYNC_ROUTERS)
-    if (!asynRouters) {
-        if (!dyncRouters) {
-            console.log('路由不存在')
-        } else {
-            asynRouters = dyncRouters
-            next()
-        }
-    } else {
-        next()
-    }
-})
+// router.beforeEach((to, from, next) => {
+//     const token = storage.get(cacheTypes.AUTH_TOKEN)
+//     if (!token) {
+//         if (whitePath.indexOf(to.path) !== -1) {
+//             next()
+//         } else {
+//             next('/account/login')
+//         }
+//     }
+//     const dyncRouters = storage.get(cacheTypes.DYNC_ROUTERS)
+//     if (!asynRouters) {
+//         if (!dyncRouters) {
+//             console.log('路由不存在')
+//         } else {
+//             asynRouters = dyncRouters
+//             next()
+//         }
+//     } else {
+//         next()
+//     }
+// })
 
 export default router
