@@ -19,6 +19,8 @@ yarn build
 ```
 yarn lint
 ```
-
+### tips
+```
+如果项目出现缺少sass依赖，请执行npm install node-sass 或者yarn add node-sass
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
